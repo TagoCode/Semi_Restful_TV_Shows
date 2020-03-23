@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <h1>Best TV Shows!</h1>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <form action="/new">
+                <div class="form-group row">
+                </div>
+                <div class="form-group row" action='/new'>
+                    <div class="col-4 col-md-2"></div>
+                    <input type="submit" class="col-4 col-md-3 btn btn-primary" value="Add Show!">
+                </div>
+            </form>
+        </div>
+        <div class="col-12 col-md-8">
+            <table class="table table-striped">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Network</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for show in list_of_things %}
+                    <tr>
+                        <td>{{show.id}}</td>
+                        
+                        <td>{{show.show_title}}</td>
+                        
+                        <td>{{show.network}}</td>
+
+                        <td>{{show.date}}</td>
+
+                        <td> <a href="/view/{{show.id}}">View</a> | <a href="/edit/{{show.id}}">Edit </a> | <a href="/delete/{{show.id}}">Delete</a></td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>

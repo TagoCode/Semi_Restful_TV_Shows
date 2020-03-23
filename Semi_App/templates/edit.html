@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Show</title>
+</head>
+<body>
+    <div text-align="center">
+        <h1>Edit a Show</h1>
+        
+        <form action="/update/{{this_show.id}}" method='post'>
+            {% csrf_token %}
+            <label for="ttitle">Title:</label><br>
+            <input type="text" id="ttitle" name="title" value="{{this_show.show_title}}"><br>
+            <label for="nnetwork">Network:</label><br>
+            <input type="text" id="nnetwork" name="network" value="{{this_show.network}}"><br><br>
+            <textarea type="textarea" id="ddescription" name="desc">{{this_show.description}}</textarea><br>
+            <input type="submit" value="Submit">
+          </form> 
+        </div>
+</body>
+</html>

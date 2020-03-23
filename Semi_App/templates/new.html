@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Shows</title>
+</head>
+<body>
+    <div text-align="center">
+    <h1>Add a New Show</h1>
+    
+    <form action="/createShow" method='post'>
+        {% csrf_token %}
+        <label for="ttitle">Title:</label><br>
+        <input type="text" id="ttitle" name="title"><br>
+        <label for="nnetwork">Network:</label><br>
+        <input type="text" id="nnetwork" name="network"><br>
+        <label for="date" id="ddate">Date</label><br>
+        <input type="date" name="date"><br><br>
+        <textarea type="textarea" id="ddescription" name="desc"></textarea><br>
+        <input type="submit" value="Submit">
+      </form> 
+    </div>
+      
+</body>
+</html>
